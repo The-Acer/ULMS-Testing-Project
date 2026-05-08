@@ -110,6 +110,7 @@
             Name = "FrmDashboard";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Umoja Learning Management System - Dashboard";
+            Load += FrmDashboard_Load;
             Click += btnStudentRegistration_Click;
             ResumeLayout(false);
             PerformLayout();

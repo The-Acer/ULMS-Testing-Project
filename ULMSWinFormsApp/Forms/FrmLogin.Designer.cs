@@ -77,7 +77,7 @@
             btnLogin.TabIndex = 4;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = true;
-            btnLogin.Click += this.btnLogin_Click;
+            btnLogin.Click += btnLogin_Click;
             // 
             // btnClear
             // 
@@ -101,6 +101,7 @@
             Controls.Add(label1);
             Name = "FrmLogin";
             Text = "Umoja Learning Management System - Login";
+            Load += FrmLogin_Load;
             ResumeLayout(false);
             PerformLayout();
         }

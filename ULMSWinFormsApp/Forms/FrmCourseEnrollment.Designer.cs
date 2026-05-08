@@ -169,6 +169,7 @@
             Name = "FrmCourseEnrollment";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Umoja Learning Management System - Course Enrolment";
+            Load += FrmCourseEnrollment_Load;
             ResumeLayout(false);
             PerformLayout();
         }

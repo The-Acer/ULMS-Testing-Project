@@ -19,6 +19,15 @@ namespace ULMSWinFormsApp.Forms
         private void btnEnroll_Click(object sender, EventArgs e)
         {
             // Intentional weak business-rule validation for testing purposes
+            // added lines
+            if (string.IsNullOrWhiteSpace(txtEnrollStudentId.Text) ||
+                string.IsNullOrWhiteSpace(txtEnrollStudentName.Text) ||
+                string.IsNullOrWhiteSpace(cmbCourse.Text) ||
+                string.IsNullOrWhiteSpace(cmbSemester.Text))
+            {
+                MessageBox.Show("Please fill in all fields before enrolling.", "Validation Error");
+                return;
+            }
             Enrollment enrollment = new Enrollment
             {
                 StudentId = txtEnrollStudentId.Text,
@@ -50,7 +59,9 @@ namespace ULMSWinFormsApp.Forms
             this.Close();
         }
 
+        private void FrmCourseEnrollment_Load(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }

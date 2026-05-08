@@ -14,8 +14,14 @@ namespace ULMSWinFormsApp
             string username = txtUsername.Text;
             string password = txtPassword.Text;
 
+            // added code
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Please enter both username and password.");
+                return;
+            }
             // Intentional faulty validation logic (for testing scenario)
-            if (username == "admin" || password == "1234")
+            if (username == "admin" && password == "1234")
             {
                 MessageBox.Show("Login Successful!");
 
@@ -37,5 +43,9 @@ namespace ULMSWinFormsApp
             txtUsername.Focus();
         }
 
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

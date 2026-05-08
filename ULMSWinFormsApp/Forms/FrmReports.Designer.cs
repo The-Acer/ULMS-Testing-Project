@@ -139,6 +139,7 @@
             Name = "FrmReports";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Umoja Learning Management System - Reports";
+            Load += FrmReports_Load;
             ResumeLayout(false);
             PerformLayout();
         }

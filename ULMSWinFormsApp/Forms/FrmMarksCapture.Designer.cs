@@ -185,6 +185,7 @@
             Name = "FrmMarksCapture";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Umoja Learning Management System - Marks Capture";
+            Load += FrmMarksCapture_Load;
             ResumeLayout(false);
             PerformLayout();
         }

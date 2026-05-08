@@ -47,5 +47,10 @@ namespace ULMSWinFormsApp.Forms
             FrmReports reportsForm = new FrmReports();
             reportsForm.ShowDialog();
         }
+
+        private void FrmDashboard_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

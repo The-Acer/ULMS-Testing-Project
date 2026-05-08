@@ -17,12 +17,19 @@ namespace ULMSWinFormsApp.Forms
 
         private void btnGenerateReport_Click(object sender, EventArgs e)
         {
-            // Intentional weak validation and slow processing for testing purposes
             string reportType = cmbReportType.Text;
             string studentId = txtReportStudentId.Text;
 
-            // Intentional poor performance simulation
-            Thread.Sleep(4000);
+            // FIX: DEF-007 — Added empty field validation
+            if (string.IsNullOrWhiteSpace(reportType) || string.IsNullOrWhiteSpace(studentId))
+            {
+                MessageBox.Show("Please select a report type and enter a Student ID.", "Validation Error");
+                return;
+            }
+
+            // FIX: DEF-007 — Removed Thread.Sleep(4000)
+            // Was causing intentional 4-second performance delay
+            // Thread.Sleep(4000);  // REMOVED — Performance issue fixed
 
             StringBuilder report = new StringBuilder();
 
@@ -40,10 +47,15 @@ namespace ULMSWinFormsApp.Forms
             }
             else if (reportType == "Marks Report")
             {
+                // FIX: DEF-007 — Corrected hardcoded incorrect average
+                // Original: "Average: 169" (wrong)
+                // Corrected: (78 + 65 + 80) / 3 = 74.33
+                double avg = (78.0 + 65.0 + 80.0) / 3.0;
+
                 report.AppendLine("Subject 1: 78");
                 report.AppendLine("Subject 2: 65");
                 report.AppendLine("Subject 3: 80");
-                report.AppendLine("Average: 169");
+                report.AppendLine("Average: " + avg.ToString("F2"));
             }
             else if (reportType == "Enrollment Report")
             {
@@ -72,8 +84,9 @@ namespace ULMSWinFormsApp.Forms
             this.Close();
         }
 
+        private void FrmReports_Load(object sender, EventArgs e)
+        {
 
-
-
+        }
     }
 }

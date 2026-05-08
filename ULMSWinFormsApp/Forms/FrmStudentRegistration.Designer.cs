@@ -187,6 +187,7 @@
             Name = "FrmStudentRegistration";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Umoja Learning Management System - Student Registration";
+            Load += FrmStudentRegistration_Load;
             ResumeLayout(false);
             PerformLayout();
         }
